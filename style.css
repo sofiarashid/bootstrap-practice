@@ -1,0 +1,32 @@
+/* Minimal customization — keep Bootstrap utilities visible. */
+body {
+  background-color: #f7f9fc;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* Alternating section backgrounds for scannability */
+section:nth-of-type(even) {
+  background-color: #eef4ff;
+  border-top: 3px solid #d6e4ff;
+  border-bottom: 3px solid #d6e4ff;
+}
+
+/* Images never overflow */
+img { max-width: 100%; height: auto; }
+
+/* Clearfix utility for float demo */
+.clearfix::after { content: ""; display: table; clear: both; }
+
+/* Fluid, sane typography for clamp pattern */
+.fluid-text { font-size: clamp(0.95rem, 1.6vw, 1.125rem); }
+
+/* Spacer to simulate page offset beneath .fixed-top demo (~42px bar) */
+.demo-fixed-spacer { height: 3.25rem; }
+
+/* Scrollbox used to demo sticky behavior without scrolling the whole page
+   (used by one of the sticky demos). */
+.demo-scrollbox {
+  height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

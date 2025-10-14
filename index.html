@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Utilities Playground — Code-Along Scaffold</title>
+
+    <!-- Bootstrap 5.3 (keep so live-added classes take effect) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Optional: your styles.css (can be empty) -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class=""> <!-- make a subtle site background and comfortable base font color -->
+
+    <!-- INTRO -->
+    <header class=""> <!-- center content; add wide page margins; add generous vertical spacing -->
+        <h1 class="">Bootstrap Utilities Playground</h1>
+        <!-- make this large, bold, with a brand color and a small bottom margin -->
+        <p class="">Grid • Display • Spacing &amp; Box Model • Typography (fit) • Flexbox • Flex + Grid • Move Content •
+            Sidebar • Images • Embeds</p> <!-- make this slightly larger than normal and give bottom spacing -->
+        <p class="">Resize the window to watch breakpoints kick in.</p>
+        <!-- make this muted and remove extra bottom margin -->
+    </header>
+
+    <!-- ============== GRID ================= -->
+    <section class=""> <!-- create a centered page container with comfortable vertical padding -->
+        <h2 class="">Grid System — Visual Demos</h2>
+        <!-- make this medium-bold, centered, secondary color, with space below -->
+
+        <!-- Demo 1 -->
+        <h3 class="">Demo 1: Breakpoints</h3>
+        <!-- small section title, bold, primary color, centered, tight bottom margin -->
+        <p class="">Three items should be full width on phones, two per row on tablets, and three per row on laptops.
+        </p> <!-- small, muted, centered -->
+        <div class=""> <!-- make this a grid row; add medium gaps; center text inside children -->
+            <div class="">A</div>
+            <!-- make this a responsive column; add strong background, white text, padding, rounded corners -->
+            <div class="">B</div> <!-- same treatment as A -->
+            <div class="">C</div> <!-- same treatment as A -->
+        </div>
+
+        <!-- Demo 2 -->
+        <h3 class="">Demo 2: Auto Layout</h3> <!-- small title like above with top margin -->
+        <p class="">This row should automatically become 1 column on phones, 2 on small screens, and 4 on large screens.
+        </p> <!-- small, muted, centered -->
+        <div class=""> <!-- turn into an auto-layout grid with responsive column counts and gaps; center text -->
+            <div class="">1</div> <!-- simple colored tile with padding and rounded corners -->
+            <div class="">2</div>
+            <div class="">3</div>
+            <div class="">4</div>
+        </div>
+
+        <!-- Demo 3 -->
+        <h3 class="">Demo 3: Equal vs Content Width</h3>
+        <p class="">Two items should stretch evenly; one item should hug its content width.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- a row that vertically centers its children with gaps -->
+            <div class="">Flexible</div> <!-- full-flex box with color, padding, rounded, centered text -->
+            <div class="">Flexible</div> <!-- same -->
+            <div class="">Content width</div> <!-- content-sized box with contrasting background and border -->
+        </div>
+
+        <!-- Demo 4 -->
+        <h3 class="">Demo 4: Ordering &amp; Offsets</h3>
+        <p class="">Reorder these three items on medium screens and center a single item with a horizontal offset.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- grid row with gaps, centered text -->
+            <div class="">B</div> <!-- place second on medium; danger style tile -->
+            <div class="">A</div> <!-- place first on medium; secondary style tile -->
+            <div class="">C</div> <!-- place third on medium; dark style tile -->
+        </div>
+        <div class=""> <!-- second row with gaps -->
+            <div class="">Centered with an offset</div> <!-- one column that is centered on medium screens -->
+        </div>
+
+        <!-- Demo 5 -->
+        <h3 class="">Demo 5: Nesting &amp; Gutters</h3>
+        <p class="">Parent removes outer gutters; nested row controls its own vertical and horizontal spacing.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- outer grid with no gutters, thick border, rounded, overflow hidden -->
+            <div class=""> <!-- left column with subtle themed background and inner padding -->
+                <div class="">Parent panel</div>
+                <!-- solid themed panel, white text, fills height, centered both ways -->
+            </div>
+            <div class=""> <!-- right column with subtle themed background and inner padding -->
+                <div class=""> <!-- nested grid with different vertical and horizontal gaps -->
+                    <div class="">
+                        <div class="">Nested 1</div> <!-- themed tile with padding, rounded, centered -->
+                    </div>
+                    <div class="">
+                        <div class="">Nested 2</div> <!-- themed tile with padding, rounded, centered -->
+                    </div>
+                    <div class="">
+                        <div class="">Nested full width</div> <!-- full width nested tile -->
+                    </div>
+                </div>
+                <p class="">Nested row owns its gutter spacing.</p> <!-- small, muted, tiny top margin -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== DISPLAY ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Display Utilities — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+
+        <h3 class="">Demo 1: Responsive Visibility</h3>
+        <p class="">Show the first box only on medium and larger screens, and the second box only on small screens.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- white card with thick blue border, padding, rounded, centered text -->
+            <div class="">Visible on medium and larger screens</div>
+            <!-- hidden on small; visible on md+; padded, rounded, bold color -->
+            <div class="">Visible only on small screens</div>
+            <!-- visible on small; hidden on md+; padded, rounded, contrasting color -->
+        </div>
+
+        <h3 class="">Demo 2: Block / Inline / Inline-block</h3>
+        <p class="">Make the first item stack on small screens but sit inline on large; keep the second always inline.
+        </p> <!-- small, muted, centered -->
+        <div class=""> <!-- light gray background chip area with padding and rounded -->
+            <div class="">Block on small → inline on large</div>
+            <!-- block by default; converts to inline-block on large; add borders and spacing -->
+            <div class="">Always inline</div> <!-- inline element with subtle border and rounding -->
+        </div>
+    </section>
+
+    <!-- ============== SPACING & BOX MODEL ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Spacing &amp; Box Model — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+        <p class=""><strong>Padding</strong> = inside; <strong>Margin</strong> = outside.</p>
+        <!-- small, muted, centered -->
+
+        <!-- Compare -->
+        <h3 class="">Demo 1: Compare Padding vs Margin</h3>
+        <div class=""> <!-- framed area with padding and border -->
+            <div class=""> <!-- grid without extra gutters -->
+                <div class="">
+                    <div class=""><strong>Box A</strong><br />Tight inside, no outside push</div>
+                    <!-- small padding, zero margin; colored tile -->
+                    <p class="">Explanation text below each tile.</p> <!-- small, muted -->
+                </div>
+                <div class="">
+                    <div class=""><strong>Box B</strong><br />More inside space, medium outside space</div>
+                    <!-- larger padding, medium margin -->
+                    <p class="">Explanation text.</p>
+                </div>
+                <div class="">
+                    <div class=""><strong>Box C</strong><br />Different padding on each side, large outside space</div>
+                    <!-- side-specific padding, large margin -->
+                    <p class="">Explanation text.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chameleon -->
+        <h3 class="">Demo 2: Responsive “Chameleon” Box</h3>
+        <p class="">Make this box use small padding/margins on phones, medium on tablets, and large on laptops.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- simple card with border and inner padding -->
+            <div class=""><strong>Chameleon Box</strong><br /><span>Resize and inspect.</span></div>
+            <!-- responsive padding + margins; bold border; rounded -->
+            <p class="">Tip: center a fixed-width element with horizontal auto margins and width utilities.</p>
+            <!-- small, muted -->
+        </div>
+
+        <!-- Gap compare -->
+        <h3 class="">Demo 3: Gap (Side-by-Side)</h3>
+        <p class="">Compare three different spacing values between inline items (no extra margins on the items
+            themselves).</p> <!-- small, muted, centered -->
+        <div class=""> <!-- three equal columns in a row with gaps -->
+            <div class="">
+                <div class=""> <!-- no gap between chips -->
+                    <div class="">A</div>
+                    <div class="">B</div>
+                    <div class="">C</div>
+                </div>
+                <p class="">Smallest gap</p> <!-- small, muted, centered -->
+            </div>
+            <div class="">
+                <div class=""> <!-- medium gap between chips -->
+                    <div class="">A</div>
+                    <div class="">B</div>
+                    <div class="">C</div>
+                </div>
+                <p class="">Medium gap</p>
+            </div>
+            <div class="">
+                <div class=""> <!-- largest gap between chips -->
+                    <div class="">A</div>
+                    <div class="">B</div>
+                    <div class="">C</div>
+                </div>
+                <p class="">Largest gap</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== TYPOGRAPHY ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Typography — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+
+        <h3 class="">Demo 1: Size • Weight • Line-height</h3>
+        <div class=""> <!-- centered text inside a white card with border and warning accent -->
+            <p class="">Large, bold, tight line-height</p>
+            <!-- make this very large, bold, tight leading, brand color -->
+            <p class="">Medium size, shorter line-height</p>
+            <!-- medium size, slightly tight leading, secondary color -->
+            <p class="">Smaller size, uppercase, semi-bold</p> <!-- small, uppercase, semi-bold, success color -->
+        </div>
+
+        <h3 class="">Demo 2: Alignment (Responsive)</h3>
+        <p class="">Center this on phones, start-align it from medium upward.</p> <!-- small, muted, centered -->
+        <p class="">Realigns at the medium breakpoint.</p>
+        <!-- give this a soft background, border, rounded, padding; center on small, start on md+ -->
+
+        <!-- Real-world fit patterns -->
+        <h3 class="">Demo 3: Real-World Text Fitting</h3>
+
+        <h4 class="">A) More Room via Grid</h4> <!-- small subhead with slight bold -->
+        <div class=""> <!-- row with gaps -->
+            <div class=""> <!-- single column that becomes 8/12 wide on md+ -->
+                <p class="">On small screens this is full-width; on larger screens limit the line length by narrowing
+                    the column.</p> <!-- card with border and padding -->
+            </div>
+        </div>
+
+        <h4 class="">B) Fluid Type (CSS clamp)</h4>
+        <p class="">Make this text scale smoothly with viewport width without using breakpoints.</p>
+        <!-- light background card with border; a class in your CSS can add clamp() -->
+
+        <h4 class="">C) Content Swap (Responsive Display)</h4>
+        <p class="">LONG VERSION for medium and up.</p> <!-- hide on small; show on md+ -->
+        <p class="">SHORT VERSION for small screens.</p> <!-- show on small; hide on md+ -->
+
+        <h4 class="">D) Truncate on Small, Full on md+</h4>
+        <div class=""> <!-- simple bordered container with small padding and a max width style if desired -->
+            <span class="">This headline should cut off with an ellipsis on small screens.</span>
+            <!-- show only on small; force single-line truncation -->
+            <span class="">Full text on larger screens.</span> <!-- show only on md+ -->
+        </div>
+
+        <h4 class="">E) Narrow vs Wide (Break vs Truncate)</h4>
+        <div class=""> <!-- two-column row -->
+            <div class="">
+                <div class=""><strong>Narrow:</strong> supercalifragilisticexpialidocious_superlong_word_demo</div>
+                <!-- force long word to break to the next line -->
+                <div class=""><strong>Truncated:</strong> show ellipsis when box is too narrow.</div>
+                <!-- single-line truncate with fixed max width -->
+            </div>
+            <div class="">
+                <div class=""><strong>Wider:</strong> Fits comfortably without breaking or truncating.</div>
+                <!-- just a bordered box -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== FLEXBOX ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Flexbox — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+
+        <h3 class="">Demo 1: Direction</h3>
+        <p class="">Stack these items vertically on phones, horizontally from medium up; add spacing between them.</p>
+        <!-- small, muted, centered -->
+        <div class="">
+            <!-- turn into a flex container with column on small, row on md+, gap between children, framed card -->
+            <div class="">Item 1</div> <!-- colored tiles with padding, rounded, fill available width -->
+            <div class="">Item 2</div>
+            <div class="">Item 3</div>
+        </div>
+
+        <h3 class="">Demo 2: Justify &amp; Align</h3>
+        <p class="">Center the three boxes horizontally and vertically inside a fixed-height area.</p>
+        <!-- small, muted, centered -->
+        <div class="" style="height: 140px;">
+            <!-- make this a flex container; center on both axes; add gap; subtle background and border -->
+            <div class="">A</div> <!-- small white tiles with border and rounding -->
+            <div class="">B</div>
+            <div class="">C</div>
+        </div>
+
+        <h3 class="">Demo 3: Order + Fill</h3>
+        <p class="">Change the visual order on medium screens and let each item share space evenly.</p>
+        <!-- small, muted, centered -->
+        <div class="">
+            <!-- flex container that stacks on small, becomes row on md+, stretches items equally, adds gap and frame -->
+            <div class="">Item B</div> <!-- place second on md; fill available width -->
+            <div class="">Item A</div> <!-- place first on md; fill available width -->
+            <div class="">Item C</div> <!-- fill available width -->
+        </div>
+    </section>
+
+    <!-- ============== FLEX + GRID TOGETHER ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Flex + Grid Together</h2> <!-- medium-bold, centered, secondary color -->
+
+        <h3 class="">Demo 1: Flex-in-Grid</h3>
+        <p class="">Use a grid for columns, and inside each column use flex to position content.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- grid row with gaps -->
+            <div class=""> <!-- column -->
+                <div class=""> <!-- inside: center content both ways; give minimum height; themed background -->
+                    <span class="">Centered with Flex</span> <!-- make the label slightly bolder -->
+                </div>
+            </div>
+            <div class="">
+                <div class=""> <!-- inside: vertical stack with space between top and bottom labels -->
+                    <span>Top</span><span>Bottom</span>
+                </div>
+            </div>
+            <div class="">
+                <div class=""> <!-- inside: spread badges evenly; center vertically; small gap; themed background -->
+                    <span class="">A</span>
+                    <span class="">B</span>
+                    <span class="">C</span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="">Demo 2: Grid-as-Flex</h3>
+        <p class="">Treat the row itself like a flex container to center columns and equalize heights.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- row centered horizontally, children same height -->
+            <div class="">
+                <div class="">Centered block</div> <!-- tall tile -->
+            </div>
+            <div class="">
+                <div class="">Same height</div> <!-- same height as neighbor -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== MOVE CONTENT: FLOAT / FIXED / STICKY / ABSOLUTE ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Move Content — Float, Fixed, Sticky, Absolute</h2> <!-- medium-bold, centered, secondary color -->
+        <p class="">Demonstrate wrapped text around an image, a bar pinned to the viewport, a header that sticks within
+            a scroll area, and an overlay.</p> <!-- small, muted, centered -->
+
+        <!-- Fixed Top -->
+        <h3 class="">Demo 1: Fixed Top Utility Bar</h3>
+        <div class=""> <!-- create a framed area to showcase a fake fixed bar -->
+            <!-- Normally this bar would live at the top of the page -->
+            <div class=""> <!-- pin this to the top of the viewport; dark background; small vertical padding -->
+                <div class=""> <!-- center content, space between left/right labels -->
+                    <span class="">Utility Label</span>
+                    <span class="">Utility Bar</span>
+                </div>
+            </div>
+            <div class=""> </div> <!-- add a spacer or body padding so content is not hidden behind the pinned bar -->
+            <p class="">Add some top space so content isn’t hidden when the bar is fixed.</p> <!-- small, muted -->
+        </div>
+
+        <!-- Sticky Top (scrollbox) -->
+        <h3 class="">Demo 2: Sticky Top (Scrollbox)</h3>
+        <div class=""> <!-- framed card -->
+            <div
+                style="height: 280px; overflow-y: auto; overflow-x: hidden; border: 2px solid #0d6efd; border-radius: .5rem;">
+                <!-- a scrollable area with its own scrollbar -->
+                <div style="position: sticky; top: 0; z-index: 1;" class="">I stick to the top of THIS box</div>
+                <!-- make this look like a header bar -->
+                <div class=""> <!-- add some inner padding -->
+                    <p class="">Scroll inside this blue-bordered box.</p> <!-- small, muted -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget turpis justo.</p>
+                    <p>Curabitur ac facilisis risus. Sed nec tempor ipsum. Duis laoreet orci a magna pharetra.</p>
+                    <p>Praesent semper mi at sapien cursus, nec finibus magna aliquet. Vestibulum eu sem.</p>
+                    <p>Cras a nibh in sem maximus imperdiet. Donec id ante arcu. Integer ac condimentum mi.</p>
+                    <p>Aliquam commodo justo vitae mattis sagittis. Vivamus interdum massa vitae orci ornare.</p>
+                    <p>Donec consequat nibh eu fermentum interdum. Suspendisse imperdiet lorem in arcu.</p>
+                    <p>Etiam posuere arcu a cursus gravida. Maecenas feugiat varius nibh.</p>
+                    <p>More filler… More filler… More filler…</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Float -->
+        <h3 class="">Demo 3: Responsive Float</h3>
+        <div class=""> <!-- simple bordered card with padding and rounded corners -->
+            <img src="https://picsum.photos/seed/float/480/320" class="" alt="Float example"
+                style="max-width: 320px;" />
+            <!-- make responsive, rounded, shadow; float to the right from medium up -->
+            <p class="">On small screens do not float. From medium up, float the image so text wraps around it; ensure
+                the parent clears the float.</p>
+            <p class="">Try floating to the left as a variation.</p>
+        </div>
+
+        <!-- Absolute badge -->
+        <h3 class="">Demo 4: Absolute Corner Badge</h3>
+        <div class=""> <!-- a subtle themed panel with border and padding; position its child absolutely -->
+            <strong class="">Position Utilities</strong>
+            <p class="">Make the parent relatively positioned and place a pill-shaped badge overlapping the top-right
+                corner.</p>
+            <span class="">New</span>
+            <!-- place this badge in the top-right corner with a small offset and translation -->
+        </div>
+    </section>
+
+    <!-- ============== LAYOUT PATTERN: SIDEBAR (sticky in a scrollbox) ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Layout Pattern — Sidebar + Content</h2> <!-- medium-bold, centered, secondary color -->
+        <p class="">Create a scrollable box that contains two columns; the sidebar should stay pinned to the top of this
+            box while the main column scrolls.</p> <!-- small, muted, centered -->
+
+        <div class=""> <!-- outer card -->
+            <div
+                style="height: 320px; overflow-y: auto; overflow-x: hidden; border: 2px solid #6c757d; border-radius: .5rem; padding: .5rem;">
+                <!-- scrollable ancestor for both columns -->
+                <div class=""> <!-- two-column row with gaps -->
+                    <aside class=""> <!-- sidebar column -->
+                        <div class=""> <!-- make this sticky to the top within this scrollbox -->
+                            <div class=""> <!-- dark panel with padding and rounded corners -->
+                                <strong>Sidebar (Sticky)</strong><br />
+                                <span class="">Links, ads, cart summary, filters…</span> <!-- small text -->
+                            </div>
+                            <div class=""> <!-- light panel with border and padding -->
+                                <p class=""><strong>Quick Links</strong></p>
+                                <ul class=""> <!-- compact list -->
+                                    <li>Latest Posts</li>
+                                    <li>Popular Tags</li>
+                                    <li>Sale Items</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <main class=""> <!-- main content column -->
+                        <div class=""> <!-- bordered content area with padding and rounded corners -->
+                            <h3 class="">Main Content</h3> <!-- small heading with color accent and bold -->
+                            <p>Scroll this container; the sidebar remains pinned at the top within the box.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget turpis justo. Morbi
+                                vitae dictum lectus.</p>
+                            <p>Curabitur ac facilisis risus. Sed nec tempor ipsum. Duis laoreet orci a magna pharetra,
+                                at dignissim magna commodo.</p>
+                            <p>Praesent semper mi at sapien cursus, nec finibus magna aliquet. Vestibulum eu sem a lacus
+                                pulvinar viverra.</p>
+                            <p>Aliquam commodo justo vitae mattis sagittis. Vivamus interdum massa vitae orci ornare,
+                                sit amet ultrices dui.</p>
+                            <p>Donec consequat nibh eu fermentum interdum. Suspendisse imperdiet lorem in arcu
+                                elementum.</p>
+                            <p>Etiam posuere, arcu a cursus gravida, nisl lacus fermentum ligula, nec suscipit urna
+                                massa id justo.</p>
+                            <p>Maecenas feugiat varius nibh, et auctor orci volutpat in. Integer id felis eu eros
+                                convallis pulvinar.</p>
+                            <p>Mauris non efficitur lacus. Curabitur luctus diam ut lectus scelerisque, non feugiat sem
+                                condimentum.</p>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== IMAGES: HELPERS, GALLERY, CAPTIONS, HERO ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Responsive Images — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+
+        <!-- Helpers -->
+        <h3 class="">Demo 1: Helpers</h3>
+        <div class=""> <!-- row with three equal columns and gaps -->
+            <div class="">
+                <img src="https://picsum.photos/seed/a/800/600" class="" alt="Example 1" />
+                <!-- make responsive; rounded; thick themed border; optional shadow -->
+                <p class="">Helper utilities: responsive sizing, rounding, borders.</p> <!-- small, centered -->
+            </div>
+            <div class="">
+                <img src="https://picsum.photos/seed/b/800/600" class="" alt="Example 2" />
+                <!-- make responsive circle with a colored border -->
+                <p class="">Create a circle image with a colored border.</p>
+            </div>
+            <div class="">
+                <div class=""> <!-- fixed 16:9 box with border and rounded overflow -->
+                    <img src="https://picsum.photos/seed/c/1200/800" class="" alt="Cover Example" />
+                    <!-- make image cover the box without distortion -->
+                </div>
+                <p class="">Constrain aspect ratio and cover-fit the image.</p>
+            </div>
+        </div>
+
+        <!-- Auto gallery -->
+        <h3 class="">Demo 2: Auto Gallery</h3>
+        <p class="">Make this gallery flow as 1 / 2 / 3 / 4 columns automatically based on screen size.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- responsive auto-cols grid with gaps -->
+            <div class=""><img src="https://picsum.photos/seed/g1/600/400" class="" alt="Gallery 1" /></div>
+            <!-- responsive image with border and rounding -->
+            <div class=""><img src="https://picsum.photos/seed/g2/600/400" class="" alt="Gallery 2" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g3/600/400" class="" alt="Gallery 3" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g4/600/400" class="" alt="Gallery 4" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g5/600/400" class="" alt="Gallery 5" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g6/600/400" class="" alt="Gallery 6" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g7/600/400" class="" alt="Gallery 7" /></div>
+            <div class=""><img src="https://picsum.photos/seed/g8/600/400" class="" alt="Gallery 8" /></div>
+        </div>
+
+        <!-- Captions -->
+        <h3 class="">Demo 3: Image Captions (Semantic)</h3>
+        <p class="">Use semantic figure/figcaption plus utilities for spacing and alignment.</p>
+        <!-- small, muted, centered -->
+        <div class=""> <!-- two columns with gaps -->
+            <div class="">
+                <figure class="">
+                    <img src="https://picsum.photos/seed/cap1/900/600" alt="Forest path at golden hour" class="" />
+                    <!-- responsive, rounded, bordered -->
+                    <figcaption class="">Figure 1. A descriptive caption for context.</figcaption>
+                    <!-- small, muted, spaced from image -->
+                </figure>
+            </div>
+            <div class="">
+                <figure class="">
+                    <img src="https://picsum.photos/seed/cap2/900/600" alt="City skyline at dusk" class="" />
+                    <!-- responsive, rounded, bordered -->
+                    <figcaption class="">Figure 2. Center this caption and separate it with a thin top rule.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Mini hero overlays -->
+        <h3 class="">Demo 4: Mini Hero (Overlay a Div on an Image)</h3>
+        <p class="">Place an overlay bar at the bottom of an image, then a perfectly centered overlay on another image.
+        </p> <!-- small, muted, centered -->
+
+        <!-- Bottom bar overlay -->
+        <div class=""> <!-- relative container with a wide cinematic ratio and visible border -->
+            <img src="https://picsum.photos/seed/hero1/1600/900" alt="Abstract hero background" class="" />
+            <!-- image should fill and crop nicely -->
+            <div class=""> <!-- overlay bar anchored to bottom; padded; dark translucent background; white text -->
+                <div class=""> <!-- stack on small; align horizontally on medium+; space between title and link -->
+                    <div>
+                        <h4 class="">Utilities-Only Hero</h4> <!-- remove margins; make bold -->
+                        <p class="">Short subtitle with slightly dimmed text.</p>
+                        <!-- remove margins; make small and semi-transparent -->
+                    </div>
+                    <a href="#" class="">Learn more →</a>
+                    <!-- styled as a white bordered pill; visible on certain breakpoints -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Centered overlay -->
+        <div class=""> <!-- relative container with 16:9 ratio and border -->
+            <img src="https://picsum.photos/seed/hero2/1600/900" alt="Geometric shapes" class="" /> <!-- fill & crop -->
+            <div class=""> <!-- overlay layer that fills and uses flex to center content both ways -->
+                <div class=""> <!-- small white translucent card with centered text -->
+                    <span class="">Centered Overlay</span> <!-- make slightly bolder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== EMBEDS (YouTube/Vimeo) via ratio ================= -->
+    <section class=""> <!-- container with vertical padding -->
+        <h2 class="">Embeds (YouTube / Vimeo) — Responsive Ratio</h2> <!-- medium-bold, centered, secondary color -->
+        <p class="">Keep a consistent 16:9 box for the video so it scales with the page.</p>
+        <!-- small, muted, centered -->
+
+        <div class=""> <!-- fixed 16:9 box with border and rounded overflow -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Public-domain short"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p class="">For Vimeo, use the player URL inside the same box.</p> <!-- small, muted -->
+    </section>
+
+    <!-- FOOTER -->
+    <footer class=""> <!-- center this, add vertical padding, top border, and muted text -->
+        <small class="">© 2025 Bootstrap Utilities Demo — Code-Along</small>
+    </footer>
+
+</body>
+
+</html>
