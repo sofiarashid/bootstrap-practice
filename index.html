@@ -5,362 +5,373 @@
   
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap Utilities Playground — Code-Along Scaffold</title>
+    <title>Bootstrap Utilities Playground — Teacher</title>
 
-    <!-- Bootstrap 5.3 (keep so live-added classes take effect) -->
+    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Optional: your styles.css (can be empty) -->
+    <!-- Minimal custom CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-success-subtle"> <!-- make a subtle site background and comfortable base font color -->
-
+<body class="bg-light">
     <!-- INTRO -->
-    <header class="container py-5 text-center"> <!-- center content; add wide page margins; add generous vertical spacing -->
-        <h1 class="display-1 fw-bold text-success">Bootstrap Utilities Playground</h1>
-        <!-- make this large, bold, with a brand color and a small bottom margin -->
-        <p class="lead mb-3">Grid • Display • Spacing &amp; Box Model • Typography (fit) • Flexbox • Flex + Grid • Move Content •
-            Sidebar • Images • Embeds</p> <!-- make this slightly larger than normal and give bottom spacing -->
-        <p class="text-muted">Resize the window to watch breakpoints kick in.</p>
-        <!-- make this muted and remove extra bottom margin -->
+    <header class="container py-5 text-center">
+        <h1 class="display-5 fw-bold mb-2 text-primary">Bootstrap Utilities Playground</h1>
+        <p class="lead mb-3">
+            Grid • Display • Spacing & Box Model • Typography (fit) • Flexbox • Flex + Grid •
+            Move Content • Sidebar Pattern • Images • Embeds
+        </p>
+        <p class="text-muted mb-0">Resize the window to watch breakpoints kick in.</p>
     </header>
 
     <!-- ============== GRID ================= -->
-    <section class="container py-5"> <!-- create a centered page container with comfortable vertical padding -->
-        <h2 class="fw-semibold text-center text-secondary">Grid System — Visual Demos</h2>
-        <!-- make this medium-bold, centered, secondary color, with space below -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Grid System — Visual Demos</h2>
 
         <!-- Demo 1 -->
         <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Breakpoints</h3>
-        <!-- small section title, bold, primary color, centered, tight bottom margin -->
-        <p class="text-center small text-muted mb-3">Three items should be full width on phones, two per row on tablets, and three per row on laptops.
-        </p> <!-- small, muted, centered -->
-        <div class="row text-center g-3"> <!-- make this a grid row; add medium gaps; center text inside children -->
-            <div class="col-12 col-md-6 col-lg-4 bg-warning p-4 rounded">A</div>
-            <!-- make this a responsive column; add strong background, white text, padding, rounded corners -->
-            <div class="col-12 col-md-6 col-lg-4 bg-info p-4 rounded">B</div> <!-- same treatment as A -->
-            <div class="col-12 col-md-6 col-lg-4 bg-danger p-4 rounded">C</div> <!-- same treatment as A -->
+        <p class="text-center small text-muted mb-3">
+            <code>col-12</code> (phones) → <code>col-md-6</code> (tablets) → <code>col-lg-4</code> (laptops).
+        </p>
+        <div class="row text-center g-3">
+            <div class="col-12 col-md-6 col-lg-4 bg-primary text-white p-4 rounded">A: col-12 col-md-6 col-lg-4</div>
+            <div class="col-12 col-md-6 col-lg-4 bg-warning text-dark p-4 rounded">B: col-12 col-md-6 col-lg-4</div>
+            <div class="col-12 col-md-6 col-lg-4 bg-success text-white p-4 rounded">C: col-12 col-md-6 col-lg-4</div>
         </div>
 
         <!-- Demo 2 -->
-        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Auto Layout</h3> <!-- small title like above with top margin -->
-        <p class="text-center small text-muted mb-3">This row should automatically become 1 column on phones, 2 on small screens, and 4 on large screens.
-        </p> <!-- small, muted, centered -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 text-center"> <!-- turn into an auto-layout grid with responsive column counts and gaps; center text -->
-            <div class="col text-bg-danger p-4 rounded">1</div> <!-- simple colored tile with padding and rounded corners -->
-            <div class="col text-bg-success p-4 rounded">2</div>
-            <div class="col text-bg-info p-4 rounded">3</div>
-            <div class="col text-bg-warning p-4 rounded">4</div>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Auto Layout with <code>row-cols-*</code>
+        </h3>
+        <p class="text-center small text-muted mb-3">
+            1 / 2 / 4 columns via <code>row-cols-1 row-cols-sm-2 row-cols-lg-4</code> — no child <code>col-*</code>.
+        </p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 text-center">
+            <div class="col text-bg-info p-4 rounded">1</div>
+            <div class="col text-bg-danger p-4 rounded">2</div>
+            <div class="col text-bg-secondary p-4 rounded">3</div>
+            <div class="col text-bg-dark p-4 rounded">4</div>
         </div>
 
         <!-- Demo 3 -->
         <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Equal vs Content Width</h3>
-        <p class="text-center small text-muted mb-3">Two items should stretch evenly; one item should hug its content width.</p>
-        <!-- small, muted, centered -->
-        <div class="row align-items-center g-3"> <!-- a row that vertically centers its children with gaps -->
-            <div class="col text-bg-info p-5 rounded">Flexible</div> <!-- full-flex box with color, padding, rounded, centered text -->
-            <div class="col text-bg-danger p-5 rounded">Flexible</div> <!-- same -->
-            <div class="col-auto text-bg-success p-5 rounded">Content width</div> <!-- content-sized box with contrasting background and border -->
+        <p class="text-center small text-muted mb-3"><code>.col</code> flexes to fill; <code>.col-auto</code> fits
+            content.</p>
+        <div class="row align-items-center g-3">
+            <div class="col text-bg-primary p-4 rounded text-center">.col (flex)</div>
+            <div class="col text-bg-success p-4 rounded text-center">.col (flex)</div>
+            <div class="col-auto bg-warning text-dark p-4 rounded text-center border border-3 border-dark">.col-auto
+            </div>
         </div>
 
         <!-- Demo 4 -->
-        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 4: Ordering &amp; Offsets</h3>
-        <p class="text-center small text-muted mb-3">Reorder these three items on medium screens and center a single item with a horizontal offset.</p>
-        <!-- small, muted, centered -->
-        <div class="row g-3 text-center"> <!-- grid row with gaps, centered text -->
-            <div class="col-12 col-md-4 order-md-2 text-bg-light rounded p-5">B</div> <!-- place second on medium; danger style tile -->
-            <div class="col-12 col-md-4 order-md-3 text-bg-warning rounded p-5">A</div> <!-- place first on medium; secondary style tile -->
-            <div class="col-12 col-md-4 order-md-1 text-bg-danger rounded p-5">C</div> <!-- place third on medium; dark style tile -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 4: Ordering & Offsets</h3>
+        <p class="text-center small text-muted mb-3">Reorder with <code>order-*</code>; center with
+            <code>offset-*</code>.
+        </p>
+        <div class="row g-3 text-center">
+            <div class="col-12 col-md-4 order-md-2 text-bg-danger p-4 rounded">B: order-md-2</div>
+            <div class="col-12 col-md-4 order-md-1 text-bg-secondary p-4 rounded">A: order-md-1</div>
+            <div class="col-12 col-md-4 order-md-3 text-bg-dark p-4 rounded">C: order-md-3</div>
         </div>
-        <div class=""> <!-- second row with gaps -->
-            <div class="">Centered with an offset</div> <!-- one column that is centered on medium screens -->
+        <div class="row g-3 text-center mt-3">
+            <div class="col-12 col-md-6 offset-md-3 text-bg-info p-4 rounded border border-3 border-white">
+                Centered with <code>offset-md-3</code>
+            </div>
         </div>
 
         <!-- Demo 5 -->
-        <h3 class="">Demo 5: Nesting &amp; Gutters</h3>
-        <p class="">Parent removes outer gutters; nested row controls its own vertical and horizontal spacing.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- outer grid with no gutters, thick border, rounded, overflow hidden -->
-            <div class=""> <!-- left column with subtle themed background and inner padding -->
-                <div class="">Parent panel</div>
-                <!-- solid themed panel, white text, fills height, centered both ways -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 5: Nesting & Gutters</h3>
+        <p class="text-center small text-muted mb-3">Parent <code>g-0</code>; nested row uses <code>gy-2 gx-5</code>.
+        </p>
+        <div class="row g-0 border border-3 border-primary rounded overflow-hidden">
+            <div class="col-12 col-lg-6 bg-primary-subtle p-3">
+                <div class="bg-primary text-white rounded p-4 h-100 d-flex align-items-center justify-content-center">
+                    Parent col (g-0 removes gutters)
+                </div>
             </div>
-            <div class=""> <!-- right column with subtle themed background and inner padding -->
-                <div class=""> <!-- nested grid with different vertical and horizontal gaps -->
-                    <div class="">
-                        <div class="">Nested 1</div> <!-- themed tile with padding, rounded, centered -->
+            <div class="col-12 col-lg-6 bg-warning-subtle p-3">
+                <div class="row gy-2 gx-5">
+                    <div class="col-6">
+                        <div class="text-bg-warning rounded p-3 text-center">Nested 1</div>
                     </div>
-                    <div class="">
-                        <div class="">Nested 2</div> <!-- themed tile with padding, rounded, centered -->
+                    <div class="col-6">
+                        <div class="text-bg-success rounded p-3 text-center">Nested 2</div>
                     </div>
-                    <div class="">
-                        <div class="">Nested full width</div> <!-- full width nested tile -->
+                    <div class="col-12">
+                        <div class="text-bg-secondary rounded p-3 text-center">Nested full width</div>
                     </div>
                 </div>
-                <p class="">Nested row owns its gutter spacing.</p> <!-- small, muted, tiny top margin -->
+                <p class="small text-muted mt-2 mb-0">Nested <code>.row</code> controls its own gutters.</p>
             </div>
         </div>
     </section>
 
     <!-- ============== DISPLAY ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Display Utilities — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Display Utilities — Visual Demos</h2>
 
-        <h3 class="">Demo 1: Responsive Visibility</h3>
-        <p class="">Show the first box only on medium and larger screens, and the second box only on small screens.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- white card with thick blue border, padding, rounded, centered text -->
-            <div class="">Visible on medium and larger screens</div>
-            <!-- hidden on small; visible on md+; padded, rounded, bold color -->
-            <div class="">Visible only on small screens</div>
-            <!-- visible on small; hidden on md+; padded, rounded, contrasting color -->
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Responsive Visibility</h3>
+        <p class="text-center small text-muted mb-3">Resize to see which block appears.</p>
+        <div class="bg-white border border-3 border-primary p-4 rounded text-center">
+            <div class="d-none d-md-block text-bg-primary py-4 mb-2 rounded">Visible on md+
+                (<code>d-none d-md-block</code>)</div>
+            <div class="d-block d-md-none text-bg-danger py-4 rounded">Visible only on small
+                (<code>d-block d-md-none</code>)</div>
         </div>
 
-        <h3 class="">Demo 2: Block / Inline / Inline-block</h3>
-        <p class="">Make the first item stack on small screens but sit inline on large; keep the second always inline.
-        </p> <!-- small, muted, centered -->
-        <div class=""> <!-- light gray background chip area with padding and rounded -->
-            <div class="">Block on small → inline on large</div>
-            <!-- block by default; converts to inline-block on large; add borders and spacing -->
-            <div class="">Always inline</div> <!-- inline element with subtle border and rounding -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Block / Inline / Inline-block</h3>
+        <p class="text-center small text-muted mb-3">Switch display at <code>lg</code>.</p>
+        <div class="bg-body-tertiary p-3 rounded">
+            <div class="d-block d-lg-inline-block bg-white border p-2 me-lg-2 mb-2 mb-lg-0 rounded">Block → inline-block
+                at lg+</div>
+            <div class="d-inline bg-white border p-2 rounded">Always inline</div>
         </div>
     </section>
 
     <!-- ============== SPACING & BOX MODEL ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Spacing &amp; Box Model — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
-        <p class=""><strong>Padding</strong> = inside; <strong>Margin</strong> = outside.</p>
-        <!-- small, muted, centered -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Spacing & Box Model — Visual Demos</h2>
+        <p class="text-center small text-muted mb-3"><strong>Padding</strong> = inside; <strong>Margin</strong> =
+            outside.</p>
 
         <!-- Compare -->
-        <h3 class="">Demo 1: Compare Padding vs Margin</h3>
-        <div class=""> <!-- framed area with padding and border -->
-            <div class=""> <!-- grid without extra gutters -->
-                <div class="">
-                    <div class=""><strong>Box A</strong><br />Tight inside, no outside push</div>
-                    <!-- small padding, zero margin; colored tile -->
-                    <p class="">Explanation text below each tile.</p> <!-- small, muted -->
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Compare Padding vs Margin</h3>
+        <div class="p-3 bg-body-tertiary border rounded">
+            <div class="row g-0">
+                <div class="col-12 col-md-4">
+                    <div class="bg-primary text-white p-2 m-0 border border-3 border-dark rounded"><strong>Box
+                            A</strong><br /><code>.p-2 .m-0</code></div>
+                    <p class="small text-muted mt-2">Tight inside space; no outside push.</p>
                 </div>
-                <div class="">
-                    <div class=""><strong>Box B</strong><br />More inside space, medium outside space</div>
-                    <!-- larger padding, medium margin -->
-                    <p class="">Explanation text.</p>
+                <div class="col-12 col-md-4">
+                    <div class="bg-primary text-white px-5 py-3 m-2 border border-3 border-dark rounded"><strong>Box
+                            B</strong><br /><code>.px-5 .py-3 .m-2</code></div>
+                    <p class="small text-muted mt-2">Bigger padding + medium margin.</p>
                 </div>
-                <div class="">
-                    <div class=""><strong>Box C</strong><br />Different padding on each side, large outside space</div>
-                    <!-- side-specific padding, large margin -->
-                    <p class="">Explanation text.</p>
+                <div class="col-12 col-md-4">
+                    <div class="bg-primary text-white ps-5 pe-1 pt-1 pb-4 m-4 border border-3 border-dark rounded">
+                        <strong>Box C</strong><br /><code>.ps-5 .pe-1 .pt-1 .pb-4 .m-4</code>
+                    </div>
+                    <p class="small text-muted mt-2">Side-specific padding + large margin.</p>
                 </div>
             </div>
         </div>
 
         <!-- Chameleon -->
-        <h3 class="">Demo 2: Responsive “Chameleon” Box</h3>
-        <p class="">Make this box use small padding/margins on phones, medium on tablets, and large on laptops.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- simple card with border and inner padding -->
-            <div class=""><strong>Chameleon Box</strong><br /><span>Resize and inspect.</span></div>
-            <!-- responsive padding + margins; bold border; rounded -->
-            <p class="">Tip: center a fixed-width element with horizontal auto margins and width utilities.</p>
-            <!-- small, muted -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Responsive “Chameleon” Box</h3>
+        <p class="text-center small text-muted mb-3">XS/SM: <code>p-2 m-1</code> → MD+: <code>p-md-4 m-md-3</code> →
+            LG+: <code>p-lg-5 m-lg-5</code></p>
+        <div class="bg-white border rounded p-3">
+            <div class="bg-success text-white p-2 p-md-4 p-lg-5 m-1 m-md-3 m-lg-5 border border-3 border-dark rounded">
+                <strong>Chameleon Box</strong><br /><span class="small">Resize and inspect in DevTools.</span>
+            </div>
+            <p class="small text-muted mt-2 mb-0">Tip: Center fixed-width with <code>.mx-auto</code> +
+                <code>.w-75</code>.
+            </p>
         </div>
 
         <!-- Gap compare -->
-        <h3 class="">Demo 3: Gap (Side-by-Side)</h3>
-        <p class="">Compare three different spacing values between inline items (no extra margins on the items
-            themselves).</p> <!-- small, muted, centered -->
-        <div class=""> <!-- three equal columns in a row with gaps -->
-            <div class="">
-                <div class=""> <!-- no gap between chips -->
-                    <div class="">A</div>
-                    <div class="">B</div>
-                    <div class="">C</div>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Gap (Side-by-Side)</h3>
+        <p class="text-center small text-muted mb-3">Compare <code>gap-0</code>, <code>gap-2</code>, <code>gap-5</code>.
+        </p>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="bg-white border rounded p-3">
+                    <div class="d-flex flex-wrap gap-0">
+                        <div class="p-2 text-bg-info rounded">A</div>
+                        <div class="p-2 text-bg-primary rounded">B</div>
+                        <div class="p-2 text-bg-success rounded">C</div>
+                    </div>
+                    <p class="small text-muted mt-2 mb-0 text-center"><code>gap-0</code></p>
                 </div>
-                <p class="">Smallest gap</p> <!-- small, muted, centered -->
             </div>
-            <div class="">
-                <div class=""> <!-- medium gap between chips -->
-                    <div class="">A</div>
-                    <div class="">B</div>
-                    <div class="">C</div>
+            <div class="col-12 col-md-4">
+                <div class="bg-white border rounded p-3">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div class="p-2 text-bg-info rounded">A</div>
+                        <div class="p-2 text-bg-primary rounded">B</div>
+                        <div class="p-2 text-bg-success rounded">C</div>
+                    </div>
+                    <p class="small text-muted mt-2 mb-0 text-center"><code>gap-2</code></p>
                 </div>
-                <p class="">Medium gap</p>
             </div>
-            <div class="">
-                <div class=""> <!-- largest gap between chips -->
-                    <div class="">A</div>
-                    <div class="">B</div>
-                    <div class="">C</div>
+            <div class="col-12 col-md-4">
+                <div class="bg-white border rounded p-3">
+                    <div class="d-flex flex-wrap gap-5">
+                        <div class="p-2 text-bg-info rounded">A</div>
+                        <div class="p-2 text-bg-primary rounded">B</div>
+                        <div class="p-2 text-bg-success rounded">C</div>
+                    </div>
+                    <p class="small text-muted mt-2 mb-0 text-center"><code>gap-5</code></p>
                 </div>
-                <p class="">Largest gap</p>
             </div>
         </div>
     </section>
 
     <!-- ============== TYPOGRAPHY ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Typography — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Typography — Visual Demos</h2>
 
-        <h3 class="">Demo 1: Size • Weight • Line-height</h3>
-        <div class=""> <!-- centered text inside a white card with border and warning accent -->
-            <p class="">Large, bold, tight line-height</p>
-            <!-- make this very large, bold, tight leading, brand color -->
-            <p class="">Medium size, shorter line-height</p>
-            <!-- medium size, slightly tight leading, secondary color -->
-            <p class="">Smaller size, uppercase, semi-bold</p> <!-- small, uppercase, semi-bold, success color -->
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Size • Weight • Line-height</h3>
+        <div class="text-center bg-white p-4 rounded border border-3 border-warning">
+            <p class="fs-1 fw-bold lh-1 text-primary mb-1">fs-1 • fw-bold • lh-1</p>
+            <p class="fs-3 lh-sm text-secondary mb-1">fs-3 • lh-sm</p>
+            <p class="fs-5 text-uppercase fw-semibold text-success mb-0">text-uppercase • fw-semibold</p>
         </div>
 
-        <h3 class="">Demo 2: Alignment (Responsive)</h3>
-        <p class="">Center this on phones, start-align it from medium upward.</p> <!-- small, muted, centered -->
-        <p class="">Realigns at the medium breakpoint.</p>
-        <!-- give this a soft background, border, rounded, padding; center on small, start on md+ -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Alignment (Responsive)</h3>
+        <p class="text-center small text-muted mb-3">Center on mobile → start on md+
+            (<code>.text-center .text-md-start</code>)</p>
+        <p class="text-center text-md-start bg-body-tertiary border rounded p-3">Realigns at <strong>md</strong>.</p>
 
         <!-- Real-world fit patterns -->
-        <h3 class="">Demo 3: Real-World Text Fitting</h3>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Real-World Text Fitting</h3>
 
-        <h4 class="">A) More Room via Grid</h4> <!-- small subhead with slight bold -->
-        <div class=""> <!-- row with gaps -->
-            <div class=""> <!-- single column that becomes 8/12 wide on md+ -->
-                <p class="">On small screens this is full-width; on larger screens limit the line length by narrowing
-                    the column.</p> <!-- card with border and padding -->
+        <h4 class="fs-6 fw-semibold mt-3 mb-2">A) More Room via Grid</h4>
+        <div class="row g-3">
+            <div class="col-12 col-md-8">
+                <p class="bg-white border rounded p-3 mb-0">On mobile full-width; at md+ we give it 8/12 width for
+                    better line length.</p>
             </div>
         </div>
 
-        <h4 class="">B) Fluid Type (CSS clamp)</h4>
-        <p class="">Make this text scale smoothly with viewport width without using breakpoints.</p>
-        <!-- light background card with border; a class in your CSS can add clamp() -->
+        <h4 class="fs-6 fw-semibold mt-4 mb-2">B) Fluid Type (CSS <code>clamp()</code>)</h4>
+        <p class="bg-body-tertiary border rounded p-3 mb-0 fluid-text">Scales smoothly with viewport; no breakpoint
+            classes.</p>
 
-        <h4 class="">C) Content Swap (Responsive Display)</h4>
-        <p class="">LONG VERSION for medium and up.</p> <!-- hide on small; show on md+ -->
-        <p class="">SHORT VERSION for small screens.</p> <!-- show on small; hide on md+ -->
+        <h4 class="fs-6 fw-semibold mt-4 mb-2">C) Content Swap (Responsive Display)</h4>
+        <p class="d-none d-md-block bg-white border rounded p-3 mb-1">LONG VERSION: more detail at md+.</p>
+        <p class="d-block d-md-none bg-white border rounded p-3 mb-0">SHORT VERSION: tighter copy on small.</p>
 
-        <h4 class="">D) Truncate on Small, Full on md+</h4>
-        <div class=""> <!-- simple bordered container with small padding and a max width style if desired -->
-            <span class="">This headline should cut off with an ellipsis on small screens.</span>
-            <!-- show only on small; force single-line truncation -->
-            <span class="">Full text on larger screens.</span> <!-- show only on md+ -->
+        <h4 class="fs-6 fw-semibold mt-4 mb-2">D) Truncate on Small, Full on md+</h4>
+        <div class="bg-white border rounded p-2" style="max-width: 320px;">
+            <span class="d-inline d-md-none text-truncate d-block" style="max-width: 100%;">This headline ellipsizes on
+                small screens.</span>
+            <span class="d-none d-md-inline">Full text on md+ — plenty of room.</span>
         </div>
 
-        <h4 class="">E) Narrow vs Wide (Break vs Truncate)</h4>
-        <div class=""> <!-- two-column row -->
-            <div class="">
-                <div class=""><strong>Narrow:</strong> supercalifragilisticexpialidocious_superlong_word_demo</div>
-                <!-- force long word to break to the next line -->
-                <div class=""><strong>Truncated:</strong> show ellipsis when box is too narrow.</div>
-                <!-- single-line truncate with fixed max width -->
+        <h4 class="fs-6 fw-semibold mt-4 mb-2">E) Narrow vs Wide (Break vs Truncate)</h4>
+        <div class="row g-3">
+            <div class="col-12 col-md-6">
+                <div class="border rounded p-2 text-break"><strong>Narrow:</strong>
+                    supercalifragilisticexpialidocious_superlong_word_demo</div>
+                <div class="text-truncate border rounded px-2 py-1 mt-2" style="max-width: 260px;">
+                    <strong>Truncated:</strong> ellipsis on small.
+                </div>
             </div>
-            <div class="">
-                <div class=""><strong>Wider:</strong> Fits comfortably without breaking or truncating.</div>
-                <!-- just a bordered box -->
+            <div class="col-12 col-md-6">
+                <div class="border rounded p-2"><strong>Wider:</strong> Fits comfortably without breaking/truncating.
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ============== FLEXBOX ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Flexbox — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Flexbox — Visual Demos</h2>
 
-        <h3 class="">Demo 1: Direction</h3>
-        <p class="">Stack these items vertically on phones, horizontally from medium up; add spacing between them.</p>
-        <!-- small, muted, centered -->
-        <div class="">
-            <!-- turn into a flex container with column on small, row on md+, gap between children, framed card -->
-            <div class="">Item 1</div> <!-- colored tiles with padding, rounded, fill available width -->
-            <div class="">Item 2</div>
-            <div class="">Item 3</div>
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Direction</h3>
+        <p class="text-center small text-muted mb-3">Column on xs → Row on md+</p>
+        <div class="d-flex flex-column flex-md-row gap-3 bg-white border border-3 border-info p-3 rounded">
+            <div class="p-3 text-bg-info rounded flex-fill">Item 1</div>
+            <div class="p-3 text-bg-primary rounded flex-fill">Item 2</div>
+            <div class="p-3 text-bg-success rounded flex-fill">Item 3</div>
         </div>
 
-        <h3 class="">Demo 2: Justify &amp; Align</h3>
-        <p class="">Center the three boxes horizontally and vertically inside a fixed-height area.</p>
-        <!-- small, muted, centered -->
-        <div class="" style="height: 140px;">
-            <!-- make this a flex container; center on both axes; add gap; subtle background and border -->
-            <div class="">A</div> <!-- small white tiles with border and rounding -->
-            <div class="">B</div>
-            <div class="">C</div>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Justify & Align</h3>
+        <p class="text-center small text-muted mb-3">Center both axes.</p>
+        <div class="d-flex justify-content-center align-items-center gap-3 bg-body-tertiary border p-3 rounded"
+            style="height: 140px;">
+            <div class="p-3 bg-white border rounded">A</div>
+            <div class="p-3 bg-white border rounded">B</div>
+            <div class="p-3 bg-white border rounded">C</div>
         </div>
 
-        <h3 class="">Demo 3: Order + Fill</h3>
-        <p class="">Change the visual order on medium screens and let each item share space evenly.</p>
-        <!-- small, muted, centered -->
-        <div class="">
-            <!-- flex container that stacks on small, becomes row on md+, stretches items equally, adds gap and frame -->
-            <div class="">Item B</div> <!-- place second on md; fill available width -->
-            <div class="">Item A</div> <!-- place first on md; fill available width -->
-            <div class="">Item C</div> <!-- fill available width -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Order + Fill</h3>
+        <p class="text-center small text-muted mb-3">Reorder w/o touching HTML; share space with <code>flex-fill</code>.
+        </p>
+        <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-3 bg-white border border-3 border-info p-3 rounded">
+            <div class="p-4 text-bg-info rounded flex-fill order-md-2">Item B (order-md-2)</div>
+            <div class="p-4 text-bg-primary rounded flex-fill order-md-1">Item A (order-md-1)</div>
+            <div class="p-4 text-bg-success rounded flex-fill">Item C (flex-fill)</div>
         </div>
     </section>
 
     <!-- ============== FLEX + GRID TOGETHER ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Flex + Grid Together</h2> <!-- medium-bold, centered, secondary color -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Flex + Grid Together</h2>
 
-        <h3 class="">Demo 1: Flex-in-Grid</h3>
-        <p class="">Use a grid for columns, and inside each column use flex to position content.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- grid row with gaps -->
-            <div class=""> <!-- column -->
-                <div class=""> <!-- inside: center content both ways; give minimum height; themed background -->
-                    <span class="">Centered with Flex</span> <!-- make the label slightly bolder -->
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Flex-in-Grid</h3>
+        <p class="text-center small text-muted mb-3">Grid sets columns; Flex aligns within each column.</p>
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-center text-bg-info rounded p-4"
+                    style="min-height:120px;">
+                    <span class="fw-semibold">Centered with Flex</span>
                 </div>
             </div>
-            <div class="">
-                <div class=""> <!-- inside: vertical stack with space between top and bottom labels -->
+            <div class="col-12 col-md-4">
+                <div class="d-flex flex-column justify-content-between text-bg-primary rounded p-3"
+                    style="min-height:120px;">
                     <span>Top</span><span>Bottom</span>
                 </div>
             </div>
-            <div class="">
-                <div class=""> <!-- inside: spread badges evenly; center vertically; small gap; themed background -->
-                    <span class="">A</span>
-                    <span class="">B</span>
-                    <span class="">C</span>
+            <div class="col-12 col-md-4">
+                <div class="d-flex justify-content-evenly align-items-center gap-2 text-bg-success rounded p-3"
+                    style="min-height:120px;">
+                    <span class="badge text-bg-light">A</span><span class="badge text-bg-light">B</span><span
+                        class="badge text-bg-light">C</span>
                 </div>
             </div>
         </div>
 
-        <h3 class="">Demo 2: Grid-as-Flex</h3>
-        <p class="">Treat the row itself like a flex container to center columns and equalize heights.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- row centered horizontally, children same height -->
-            <div class="">
-                <div class="">Centered block</div> <!-- tall tile -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Grid-as-Flex</h3>
+        <p class="text-center small text-muted mb-3"><code>.row</code> is flex; use flex utilities on it.</p>
+        <div class="row justify-content-center align-items-stretch g-3">
+            <div class="col-10 col-sm-6 col-md-4">
+                <div class="text-bg-warning rounded p-4 h-100">Centered block (justify-content-center on row)</div>
             </div>
-            <div class="">
-                <div class="">Same height</div> <!-- same height as neighbor -->
+            <div class="col-10 col-sm-6 col-md-4">
+                <div class="text-bg-dark rounded p-4 h-100">Same height via <code>.h-100</code></div>
             </div>
         </div>
     </section>
 
     <!-- ============== MOVE CONTENT: FLOAT / FIXED / STICKY / ABSOLUTE ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Move Content — Float, Fixed, Sticky, Absolute</h2> <!-- medium-bold, centered, secondary color -->
-        <p class="">Demonstrate wrapped text around an image, a bar pinned to the viewport, a header that sticks within
-            a scroll area, and an overlay.</p> <!-- small, muted, centered -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-1 text-center text-secondary">Move Content — Float, Fixed, Sticky, Absolute</h2>
+        <p class="text-center small text-muted mb-4">Float wraps text; <code>.fixed-top</code> pins to viewport;
+            <code>.sticky-top</code> sticks in-flow; absolute places overlays.
+        </p>
 
         <!-- Fixed Top -->
-        <h3 class="">Demo 1: Fixed Top Utility Bar</h3>
-        <div class=""> <!-- create a framed area to showcase a fake fixed bar -->
-            <!-- Normally this bar would live at the top of the page -->
-            <div class=""> <!-- pin this to the top of the viewport; dark background; small vertical padding -->
-                <div class=""> <!-- center content, space between left/right labels -->
-                    <span class="">Utility Label</span>
-                    <span class="">Utility Bar</span>
-                </div>
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Fixed Top Utility Bar</h3>
+        <div class="position-relative border rounded p-3 bg-white">
+            <!-- Normally this would live at the top of <body>. Rendered here for demo. -->
+            <div class="fixed-top text-bg-dark py-2">
+                <div class="container d-flex justify-content-between"><span class="small">.fixed-top</span><span
+                        class="small">Utility Bar</span></div>
             </div>
-            <div class=""> </div> <!-- add a spacer or body padding so content is not hidden behind the pinned bar -->
-            <p class="">Add some top space so content isn’t hidden when the bar is fixed.</p> <!-- small, muted -->
+            <div class="demo-fixed-spacer"></div>
+            <p class="mb-0 small text-muted">Add top space (e.g., <code>body { padding-top: 3.25rem; }</code>) so
+                content isn’t hidden.</p>
         </div>
 
-        <!-- Sticky Top (scrollbox) -->
-        <h3 class="">Demo 2: Sticky Top (Scrollbox)</h3>
-        <div class=""> <!-- framed card -->
+        <!-- Demo 2: Sticky Top (Scrollbox — proven minimal) -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Sticky Top (Scrollbox)</h3>
+        <div class="bg-white border rounded p-3">
+            <!-- SCROLLABLE BOX (fixed height + its own scrollbar) -->
             <div
                 style="height: 280px; overflow-y: auto; overflow-x: hidden; border: 2px solid #0d6efd; border-radius: .5rem;">
-                <!-- a scrollable area with its own scrollbar -->
-                <div style="position: sticky; top: 0; z-index: 1;" class="">I stick to the top of THIS box</div>
-                <!-- make this look like a header bar -->
-                <div class=""> <!-- add some inner padding -->
-                    <p class="">Scroll inside this blue-bordered box.</p> <!-- small, muted -->
+                <!-- Sticky header INSIDE the scrollable ancestor -->
+                <div style="position: sticky; top: 0; z-index: 1;" class="bg-primary text-white p-2">
+                    I stick to the top of THIS box (inline <code>position:sticky; top:0</code>)
+                </div>
+
+                <!-- Tall content to force scrolling -->
+                <div class="p-3">
+                    <p class="small text-muted">Scroll inside this blue-bordered box.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget turpis justo.</p>
                     <p>Curabitur ac facilisis risus. Sed nec tempor ipsum. Duis laoreet orci a magna pharetra.</p>
                     <p>Praesent semper mi at sapien cursus, nec finibus magna aliquet. Vestibulum eu sem.</p>
@@ -373,48 +384,51 @@
             </div>
         </div>
 
+
         <!-- Float -->
-        <h3 class="">Demo 3: Responsive Float</h3>
-        <div class=""> <!-- simple bordered card with padding and rounded corners -->
-            <img src="https://picsum.photos/seed/float/480/320" class="" alt="Float example"
-                style="max-width: 320px;" />
-            <!-- make responsive, rounded, shadow; float to the right from medium up -->
-            <p class="">On small screens do not float. From medium up, float the image so text wraps around it; ensure
-                the parent clears the float.</p>
-            <p class="">Try floating to the left as a variation.</p>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Responsive Float</h3>
+        <div class="bg-white border p-3 rounded clearfix">
+            <img src="https://picsum.photos/seed/float/480/320" class="img-fluid rounded shadow ms-3 mb-2 float-md-end"
+                alt="Float example" style="max-width: 320px;" />
+            <p class="mb-2">On small screens no float. On <strong>md+</strong>, <code>.float-md-end</code> pushes it
+                right and text wraps around. Add <code>.clearfix</code> to the parent.</p>
+            <p class="mb-0">Try <code>float-md-start</code> for the opposite side.</p>
         </div>
 
         <!-- Absolute badge -->
-        <h3 class="">Demo 4: Absolute Corner Badge</h3>
-        <div class=""> <!-- a subtle themed panel with border and padding; position its child absolutely -->
-            <strong class="">Position Utilities</strong>
-            <p class="">Make the parent relatively positioned and place a pill-shaped badge overlapping the top-right
-                corner.</p>
-            <span class="">New</span>
-            <!-- place this badge in the top-right corner with a small offset and translation -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 4: Absolute Corner Badge</h3>
+        <div class="position-relative bg-warning-subtle border border-warning border-3 rounded p-4">
+            <strong class="d-block mb-2">Position Utilities</strong>
+            <p class="mb-0">Parent is <code>.position-relative</code>; badge uses
+                <code>.position-absolute .top-0 .end-0 .translate-middle</code>.
+            </p>
+            <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill text-bg-info">New</span>
         </div>
     </section>
 
-    <!-- ============== LAYOUT PATTERN: SIDEBAR (sticky in a scrollbox) ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Layout Pattern — Sidebar + Content</h2> <!-- medium-bold, centered, secondary color -->
-        <p class="">Create a scrollable box that contains two columns; the sidebar should stay pinned to the top of this
-            box while the main column scrolls.</p> <!-- small, muted, centered -->
+    <!-- ============== LAYOUT PATTERN: SIDEBAR (scrollbox so sticky is obvious) ================= -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Layout Pattern — Sidebar + Content</h2>
+        <p class="text-center small text-muted mb-3">
+            The grey box scrolls. The sidebar sticks at the top of that box (<code>position-sticky top-0</code>). Stacks
+            on mobile.
+        </p>
 
-        <div class=""> <!-- outer card -->
+        <div class="bg-white border rounded p-3">
+            <!-- SCROLLABLE ANCESTOR for BOTH columns -->
             <div
                 style="height: 320px; overflow-y: auto; overflow-x: hidden; border: 2px solid #6c757d; border-radius: .5rem; padding: .5rem;">
-                <!-- scrollable ancestor for both columns -->
-                <div class=""> <!-- two-column row with gaps -->
-                    <aside class=""> <!-- sidebar column -->
-                        <div class=""> <!-- make this sticky to the top within this scrollbox -->
-                            <div class=""> <!-- dark panel with padding and rounded corners -->
+                <div class="row g-3">
+                    <!-- SIDEBAR (the actual sticky element) -->
+                    <aside class="col-12 col-md-4">
+                        <div class="position-sticky top-0">
+                            <div class="text-bg-dark rounded p-3 mb-3">
                                 <strong>Sidebar (Sticky)</strong><br />
-                                <span class="">Links, ads, cart summary, filters…</span> <!-- small text -->
+                                <span class="small">Links, ads, cart summary, filters…</span>
                             </div>
-                            <div class=""> <!-- light panel with border and padding -->
-                                <p class=""><strong>Quick Links</strong></p>
-                                <ul class=""> <!-- compact list -->
+                            <div class="bg-body-tertiary border rounded p-3">
+                                <p class="small mb-2"><strong>Quick Links</strong></p>
+                                <ul class="small mb-0 ps-3">
                                     <li>Latest Posts</li>
                                     <li>Popular Tags</li>
                                     <li>Sale Items</li>
@@ -423,9 +437,10 @@
                         </div>
                     </aside>
 
-                    <main class=""> <!-- main content column -->
-                        <div class=""> <!-- bordered content area with padding and rounded corners -->
-                            <h3 class="">Main Content</h3> <!-- small heading with color accent and bold -->
+                    <!-- MAIN CONTENT (tall to force scroll) -->
+                    <main class="col-12 col-md-8">
+                        <div class="border rounded p-3">
+                            <h3 class="fs-5 fw-bold text-primary">Main Content</h3>
                             <p>Scroll this container; the sidebar remains pinned at the top within the box.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget turpis justo. Morbi
                                 vitae dictum lectus.</p>
@@ -451,122 +466,133 @@
     </section>
 
     <!-- ============== IMAGES: HELPERS, GALLERY, CAPTIONS, HERO ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Responsive Images — Visual Demos</h2> <!-- medium-bold, centered, secondary color -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Responsive Images — Visual Demos</h2>
 
         <!-- Helpers -->
-        <h3 class="">Demo 1: Helpers</h3>
-        <div class=""> <!-- row with three equal columns and gaps -->
-            <div class="">
-                <img src="https://picsum.photos/seed/a/800/600" class="" alt="Example 1" />
-                <!-- make responsive; rounded; thick themed border; optional shadow -->
-                <p class="">Helper utilities: responsive sizing, rounding, borders.</p> <!-- small, centered -->
+        <h3 class="fs-5 fw-bold text-primary text-center mb-2">Demo 1: Helpers</h3>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <img src="https://picsum.photos/seed/a/800/600"
+                    class="img-fluid rounded shadow border border-primary border-3" alt="Example 1" />
+                <p class="text-center small mt-2"><code>.img-fluid .rounded .border-primary</code></p>
             </div>
-            <div class="">
-                <img src="https://picsum.photos/seed/b/800/600" class="" alt="Example 2" />
-                <!-- make responsive circle with a colored border -->
-                <p class="">Create a circle image with a colored border.</p>
+            <div class="col-12 col-md-4">
+                <img src="https://picsum.photos/seed/b/800/600"
+                    class="img-fluid rounded-circle border border-success border-3" alt="Example 2" />
+                <p class="text-center small mt-2"><code>.rounded-circle .border-success</code></p>
             </div>
-            <div class="">
-                <div class=""> <!-- fixed 16:9 box with border and rounded overflow -->
-                    <img src="https://picsum.photos/seed/c/1200/800" class="" alt="Cover Example" />
-                    <!-- make image cover the box without distortion -->
+            <div class="col-12 col-md-4">
+                <div class="ratio ratio-16x9 border border-warning border-3 rounded overflow-hidden">
+                    <img src="https://picsum.photos/seed/c/1200/800" class="w-100 h-100 object-fit-cover"
+                        alt="Cover Example" />
                 </div>
-                <p class="">Constrain aspect ratio and cover-fit the image.</p>
+                <p class="text-center small mt-2"><code>.ratio-16x9 .object-fit-cover</code></p>
             </div>
         </div>
 
         <!-- Auto gallery -->
-        <h3 class="">Demo 2: Auto Gallery</h3>
-        <p class="">Make this gallery flow as 1 / 2 / 3 / 4 columns automatically based on screen size.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- responsive auto-cols grid with gaps -->
-            <div class=""><img src="https://picsum.photos/seed/g1/600/400" class="" alt="Gallery 1" /></div>
-            <!-- responsive image with border and rounding -->
-            <div class=""><img src="https://picsum.photos/seed/g2/600/400" class="" alt="Gallery 2" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g3/600/400" class="" alt="Gallery 3" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g4/600/400" class="" alt="Gallery 4" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g5/600/400" class="" alt="Gallery 5" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g6/600/400" class="" alt="Gallery 6" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g7/600/400" class="" alt="Gallery 7" /></div>
-            <div class=""><img src="https://picsum.photos/seed/g8/600/400" class="" alt="Gallery 8" /></div>
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 2: Auto Gallery (<code>row-cols-*</code>)</h3>
+        <p class="text-center small text-muted mb-3">1 / 2 / 3 / 4 columns — no child <code>col-*</code> needed.</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            <div class="col"><img src="https://picsum.photos/seed/g1/600/400" class="img-fluid rounded border"
+                    alt="Gallery 1" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g2/600/400" class="img-fluid rounded border"
+                    alt="Gallery 2" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g3/600/400" class="img-fluid rounded border"
+                    alt="Gallery 3" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g4/600/400" class="img-fluid rounded border"
+                    alt="Gallery 4" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g5/600/400" class="img-fluid rounded border"
+                    alt="Gallery 5" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g6/600/400" class="img-fluid rounded border"
+                    alt="Gallery 6" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g7/600/400" class="img-fluid rounded border"
+                    alt="Gallery 7" /></div>
+            <div class="col"><img src="https://picsum.photos/seed/g8/600/400" class="img-fluid rounded border"
+                    alt="Gallery 8" /></div>
         </div>
 
         <!-- Captions -->
-        <h3 class="">Demo 3: Image Captions (Semantic)</h3>
-        <p class="">Use semantic figure/figcaption plus utilities for spacing and alignment.</p>
-        <!-- small, muted, centered -->
-        <div class=""> <!-- two columns with gaps -->
-            <div class="">
-                <figure class="">
-                    <img src="https://picsum.photos/seed/cap1/900/600" alt="Forest path at golden hour" class="" />
-                    <!-- responsive, rounded, bordered -->
-                    <figcaption class="">Figure 1. A descriptive caption for context.</figcaption>
-                    <!-- small, muted, spaced from image -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 3: Image Captions (Semantic)</h3>
+        <p class="text-center small text-muted mb-3">Use <code>&lt;figure&gt;</code>/<code>&lt;figcaption&gt;</code> +
+            utilities.</p>
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <figure class="m-0">
+                    <img src="https://picsum.photos/seed/cap1/900/600" alt="Forest path at golden hour"
+                        class="img-fluid rounded border" />
+                    <figcaption class="small text-muted mt-2">Figure 1. A descriptive caption for context.</figcaption>
                 </figure>
             </div>
-            <div class="">
-                <figure class="">
-                    <img src="https://picsum.photos/seed/cap2/900/600" alt="City skyline at dusk" class="" />
-                    <!-- responsive, rounded, bordered -->
-                    <figcaption class="">Figure 2. Center this caption and separate it with a thin top rule.
-                    </figcaption>
+            <div class="col-12 col-md-6">
+                <figure class="m-0">
+                    <img src="https://picsum.photos/seed/cap2/900/600" alt="City skyline at dusk"
+                        class="img-fluid rounded border" />
+                    <figcaption class="small text-center text-secondary mt-2 pt-2 border-top">Figure 2. Centered caption
+                        with a rule.</figcaption>
                 </figure>
             </div>
         </div>
 
         <!-- Mini hero overlays -->
-        <h3 class="">Demo 4: Mini Hero (Overlay a Div on an Image)</h3>
-        <p class="">Place an overlay bar at the bottom of an image, then a perfectly centered overlay on another image.
-        </p> <!-- small, muted, centered -->
+        <h3 class="fs-5 fw-bold text-primary text-center mt-4 mb-2">Demo 4: Mini Hero (Overlay a Div on an Image)</h3>
+        <p class="text-center small text-muted mb-3"><code>.position-relative</code> wrapper +
+            <code>.position-absolute</code> overlay; <code>.ratio</code> + <code>.object-fit-cover</code> for responsive
+            crop.
+        </p>
 
         <!-- Bottom bar overlay -->
-        <div class=""> <!-- relative container with a wide cinematic ratio and visible border -->
-            <img src="https://picsum.photos/seed/hero1/1600/900" alt="Abstract hero background" class="" />
-            <!-- image should fill and crop nicely -->
-            <div class=""> <!-- overlay bar anchored to bottom; padded; dark translucent background; white text -->
-                <div class=""> <!-- stack on small; align horizontally on medium+; space between title and link -->
+        <div class="position-relative ratio ratio-21x9 rounded overflow-hidden border">
+            <img src="https://picsum.photos/seed/hero1/1600/900" alt="Abstract hero background"
+                class="w-100 h-100 object-fit-cover" />
+            <div class="position-absolute bottom-0 start-0 end-0 p-3 p-sm-4 bg-dark bg-opacity-50 text-white">
+                <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2">
                     <div>
-                        <h4 class="">Utilities-Only Hero</h4> <!-- remove margins; make bold -->
-                        <p class="">Short subtitle with slightly dimmed text.</p>
-                        <!-- remove margins; make small and semi-transparent -->
+                        <h4 class="m-0 fw-bold">Utilities-Only Hero</h4>
+                        <p class="m-0 small opacity-75">Ratio + object-fit + position utilities — no components.</p>
                     </div>
-                    <a href="#" class="">Learn more →</a>
-                    <!-- styled as a white bordered pill; visible on certain breakpoints -->
+                    <a href="#"
+                        class="text-white text-decoration-none border rounded px-3 py-2 small d-inline-block d-md-none d-lg-inline-block">Learn
+                        more →</a>
                 </div>
             </div>
         </div>
 
-        <!-- Centered overlay -->
-        <div class=""> <!-- relative container with 16:9 ratio and border -->
-            <img src="https://picsum.photos/seed/hero2/1600/900" alt="Geometric shapes" class="" /> <!-- fill & crop -->
-            <div class=""> <!-- overlay layer that fills and uses flex to center content both ways -->
-                <div class=""> <!-- small white translucent card with centered text -->
-                    <span class="">Centered Overlay</span> <!-- make slightly bolder -->
+        <!-- Centered overlay (flex-centered, always perfect) -->
+        <div class="position-relative ratio ratio-16x9 rounded overflow-hidden border mt-3">
+            <img src="https://picsum.photos/seed/hero2/1600/900" alt="Geometric shapes"
+                class="w-100 h-100 object-fit-cover" />
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <div class="bg-white bg-opacity-75 text-dark rounded px-3 py-2 text-center">
+                    <span class="fw-semibold">Centered Overlay</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============== EMBEDS (YouTube/Vimeo) via ratio ================= -->
-    <section class=""> <!-- container with vertical padding -->
-        <h2 class="">Embeds (YouTube / Vimeo) — Responsive Ratio</h2> <!-- medium-bold, centered, secondary color -->
-        <p class="">Keep a consistent 16:9 box for the video so it scales with the page.</p>
-        <!-- small, muted, centered -->
+    <!-- ============== EMBEDS (YouTube/Vimeo) via .ratio ================= -->
+    <section class="container py-5">
+        <h2 class="fw-semibold mb-4 text-center text-secondary">Embeds (YouTube / Vimeo) — Responsive Ratio</h2>
+        <p class="text-center small text-muted mb-3">
+            Use <code>.ratio</code> to keep a consistent aspect ratio. Example below is a kid-safe, public-domain clip
+            (replace with your choice).
+        </p>
 
-        <div class=""> <!-- fixed 16:9 box with border and rounded overflow -->
+        <!-- Replace VIDEO_ID_HERE with a safe, short clip (e.g., NASA) -->
+        <div class="ratio ratio-16x9 border rounded overflow-hidden">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Public-domain short"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
-        <p class="">For Vimeo, use the player URL inside the same box.</p> <!-- small, muted -->
+        <p class="small text-muted mt-2 mb-0">For Vimeo, use the player URL inside the same <code>.ratio</code> wrapper.
+        </p>
     </section>
 
     <!-- FOOTER -->
-    <footer class=""> <!-- center this, add vertical padding, top border, and muted text -->
-        <small class="">© 2025 Bootstrap Utilities Demo — Code-Along</small>
+    <footer class="container text-center py-4 mt-5 border-top">
+        <small class="text-muted">© 2025 Bootstrap Utilities Demo — Teacher</small>
     </footer>
-
 </body>
 
 </html>
